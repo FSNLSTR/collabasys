@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" contents="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<head>
-<body>
-    <h1>{{object.name}}</h1>
-    <h1>{{object.college_email}}</h1>
-    <p>{{object.name}}</p>
-    <p><a target="_blank" hrf={{object.website}} alt="dev website">Website</a></p>
-    <hr>
-    {{object.phone}}
-</body>
-</html>
+{% extends 'jobs/_base.html' %}
+
+{% block content %}
+<div class="flex">
+    <!-- <div>
+        {% if collaborator.profile_pic %}
+                <img class="w-32 border rounded-full mr-4" src="{{ collaborator.profile_pic.url }}" alt="Profile pic">
+        {% endif %}
+    </div> -->
+    <div>
+        <h1 class="text-3xl font-semibold">{{object.name}}</h1>
+        <p class="text-lg text-gray-800 my-2">{{object.year_in_school}}</p>
+        {% if object.github %}
+        <p><a class="text-blue-600 underline" target="_blank" href={{object.website}} alt="dev website">Website</a></p>
+        {% else %}
+        <p class="text-gray-600">No website</p>
+        {% endif %}
+    </div>
+</div>
+    <hr class="my-4">
+    {{object.work_experience}}
+
+{% endblock content %}

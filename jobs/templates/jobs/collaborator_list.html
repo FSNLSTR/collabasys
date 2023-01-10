@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" contents="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<head>
-<body>
-    {% for collaborator in object_list %}
-        <u1>
-            <li>{{collaborator.name}}</li>
-        </u1>
-    {% endfor %}
-</body>
-</html>
+{% extends 'jobs/_base.html' %}
+
+{% block content %}
+    <h1 class="text-4xl font-bold mb-8">All Collaborators</h1>
+    <div class="shadow">
+        {% for collaborator in object_list %}
+        <a href="{% url 'collaborator-detail' collaborator.pk %}">
+        <div class="p-6 border flex items-center">
+            <div>
+                <p class="text-lg font-semibold">
+                    {{collaborator.name}}
+                </p>
+                <p class="text-gray-700 pt-4">
+                    {{collaborator.tagline}}
+                </p>
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
