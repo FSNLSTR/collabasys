@@ -1,0 +1,2 @@
+To setup venv = source env/bin/activate
+To run project = python manage.py runserver
