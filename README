@@ -1,2 +1,6 @@
 To setup venv = source env/bin/activate
 To run project = python manage.py runserver
+
+Run both sequentially to make migrations
+python manage.py makemigrations
+python manage.py migrate
