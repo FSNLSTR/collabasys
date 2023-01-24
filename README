@@ -14,8 +14,23 @@ to set up CLI tools
 3) In the commited version of settings.py username yashgollapudi is used, replace that with local username
 4) create a server names collabasys for the tables to be hosted on
 5) run migrations above and you will be all set up
+6) you may need to rerun env/bin/activate to ensure everything is updated
+
+Connect Postgres to VS Code
+1) Install PostgreSQL by Weijan Chen from VS Code extensions
+2) There will be a new tab on the sidebar with 3 stacked cylinders, go there
+3) Click the + on the top right of the left sidebar to create a new connection
+4) Check that you have selected PostgreSQl
+5) Fill in the following information to the form
+    host: 127.0.0.1 (localhost)
+    Port: 5432 (default unless changed during PostgreSQL setup)
+    Username: you username
+    Password: leave blank (Unless you created one)
+    Database: Collabasys
+6) Click Connect, you should now be able to expand the collabasys database and see all of the tables created during activaiton
 
 Notes:
 1) Step 3 will be changed when we move to a cloud provider, this is only for the time being during setup and testing
 2) You will lose all users you have created when using the sqllite 3 database, so create a new super user and whatever else you want, 
 optionally you can export your data but this is more complicated so I recommend against it.
+3) Setting up postgres makes the db.sqllite file useless and can be deleted if you want
