@@ -1,0 +1,18 @@
+{% extends "jobs/_base.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Register--> 
+<div class="container py-5">
+	<h1>Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}                    
+		<input class="px-8 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 hover:cursor-pointer" type="submit" value="Signup">
+	</form>
+	<p class="py-4">Already have an account? <a class="text-blue-500 underline" href="{% url 'login' %}">Log in here.</a></p>
+</div>
+
+{% endblock %}
