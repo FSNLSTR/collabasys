@@ -4,3 +4,18 @@ To run project = python manage.py runserver
 Run both sequentially to make migrations
 python manage.py makemigrations
 python manage.py migrate
+
+
+Postgres Setup:
+1) Install postgres 14 via postgres app installation (https://postgresapp.com/)
+2) For this project optional step 3 is NOT optional, run 
+sudo mkdir -p /etc/paths.d && echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
+to set up CLI tools
+3) In the commited version of settings.py username yashgollapudi is used, replace that with local username
+4) create a server names collabasys for the tables to be hosted on
+5) run migrations above and you will be all set up
+
+Notes:
+1) Step 3 will be changed when we move to a cloud provider, this is only for the time being during setup and testing
+2) You will lose all users you have created when using the sqllite 3 database, so create a new super user and whatever else you want, 
+optionally you can export your data but this is more complicated so I recommend against it.
