@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<header class = "bg-transparent shadow-md sticky top-0 z-50">
+    <div class="flex flex-row items-center justify-between lg:justify-between">
+        <a href="{% url 'collaborator_list' %}" class="text-3xl italic font-bold tracking-tighter text-black-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"> Collabasys </a>
+        <a href="{% url 'login' %}" class="text-xl tracking-tighter text-black-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">Already have an account? Login </a>
+    </div>
+</header>
+<body>
+    <div class = "h-screen grid grid-cols-2">
+        <a href="{% url 'register' %}">
+            <div class = "text-2xl font-bold flex items-center justify-center min-h-screen bg-blue-900 hover:blue-500">
+                <p>
+                    Register As Collaborator
+                </p>
+            </div>
+        </a>
+        <a href="{% url 'login' %}">
+            <div class = "text-2xl font-bold flex items-center justify-center min-h-screen bg-white-900 hover:white-500">
+                <p>
+                    Register As Enterprise
+                </p>
+            </div>
+        </a>
+        
+    </div>
+</body>
+</html>
